@@ -121,8 +121,24 @@ stamp_time = "%d%02d%02d_%02d%02d%02d" % (time_now.year, time_now.month, time_no
 name_folder = stamp_time + '_' + Book_Title
 os.makedirs(name_folder)
 
-type_pages = ['cov%03d', 'bok%03d', 'leg%03d', 'fow%03d', '!%05d', '%06d', 'att%03d', 'bac%03d']
-name_pages = ['01_Cover_', '02_BookTi_', '03_Lega_', '04_Prefa_', '05_Menu_', '06_Text_', '07_Appendix_', '08_Back_']
+type_pages = ['cov%03d',
+              'bok%03d',
+              'leg%03d',
+              'fow%03d',
+              '!%05d',
+              '%06d',
+              'att%03d',
+              'bac%03d'
+              ]
+name_pages = [  '01_Cover_',
+                '02_BookTi_',
+                '03_Lega_',
+                '04_Prefa_',
+                '05_Menu_',
+                '06_Text_',
+                '07_Appendix_',
+                '08_Back_'
+                ]
 
 # 下载頁面
 
