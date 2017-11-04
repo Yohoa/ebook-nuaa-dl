@@ -36,7 +36,7 @@ if sys.stdout.encoding == 'cp936':
 #log = LoggerHandler.getLogger("main")
 
 # 默认转换路径
-rootDir = '/Users/Yangzhizhi/云端硬盘/Books/Test_02' # like '/Users/alexliu/Software/DM/waits/'
+rootDir = '/Users/Yangzhizhi/云端硬盘/Books/Test_02 - ' # like '/Users/alexliu/Software/DM/waits/'
 
 Convert2PDF(rootDir)
 
