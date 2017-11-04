@@ -11,7 +11,7 @@ It should be also mentioned that Liu.Qi's image2pdf script from GitHub have been
 
 
 
-###	To-do List:
+### To-do List:
 2. 支持自动判别页码数目✓
 3. 支持自动获取标题✓
 4. 支持自动合成PDF 档案
@@ -27,7 +27,7 @@ It should be also mentioned that Liu.Qi's image2pdf script from GitHub have been
 
 
 
-###	Tips for Improvements:
+### Tips for Improvements:
 1. 网页title 就是书名✓
 2. 图片地址是绝对地址，根据观测，不会变化✓
 3. 目录的图片地址，是原链接，将后部的序号参数左侧第一个'0'改为'!'后所得。✓
@@ -35,12 +35,12 @@ It should be also mentioned that Liu.Qi's image2pdf script from GitHub have been
 5. 发现了从ISBN到目标位址的方法！
 	1. 只需要提供ISBN http://202.119.70.51:8088/servlet/isExitJson?isbn=978-7-121-22162-0
 
-6. 根据http://202.119.70.51:8088/Jpath_sky/js/jpathBrowser5.js?v=1.1 描述
-`cov001.jpg - 封面 - 两页 -  "cov%03d"%i
-`bok001.jpg - 书名页 "bok%03d"
-`leg001.jpg - 版权页 "leg%03d"
-`fow001.jpg - 前言 "fow%03d"
-`!00001.jpg - 目录 "!%05d"
-`000001.jpg - 正文 "%06d"
-`att001.jpg - 附录 "att%03d"
-`bac001.jpg - 封底 "bac%03d"
+6. 根据http://202.119.70.51:8088/Jpath\_sky/js/jpathBrowser5.js?v=1.1 描述
+	cov001.jpg - 封面 - 两页 -  "cov%03d"%i
+	bok001.jpg - 书名页 "bok%03d"
+	leg001.jpg - 版权页 "leg%03d"
+	fow001.jpg - 前言 "fow%03d"
+	!00001.jpg - 目录 "!%05d"
+	000001.jpg - 正文 "%06d"
+	att001.jpg - 附录 "att%03d"
+	bac001.jpg - 封底 "bac%03d"
