@@ -12,14 +12,6 @@
 
 
 
-# Tips for Improvements:
-# 	1. 网页title 就是书名✓
-#	2. 图片地址是绝对地址，根据观测，不会变化✓
-#	3. 目录的图片地址，是原链接，将后部的序号参数左侧第一个0改为! 后所得。✓
-#	4. 在线阅读界面是动态地址！
-#       5. 发现了从ISBN到目标位址的方法！
-#               只需要提供ISBN http://202.119.70.51:8088/servlet/isExitJson?isbn=978-7-121-22162-0
-
 # 使用了以下的module：
 # 1. requests
 # 2. bs4
@@ -34,15 +26,6 @@ import requests, os, bs4, re, datetime, sys
 
 logging.disable(logging.CRITICAL)
 
-# 根据http://202.119.70.51:8088/Jpath_sky/js/jpathBrowser5.js?v=1.1 描述
-# cov001.jpg - 封面 - 两页 -  "cov%03d"%i
-# bok001.jpg - 书名页 "bok%03d"
-# leg001.jpg - 版权页 "leg%03d"
-# fow001.jpg - 前言 "fow%03d"
-# !00001.jpg - 目录 "!%05d"
-# 000001.jpg - 正文 "%06d"
-# att001.jpg - 附录 "att%03d"
-# bac001.jpg - 封底 "bac%03d"
 
 
 if (len(sys.argv) == 2):
