@@ -9,7 +9,12 @@ It should be also mentioned that Liu.Qi's image2pdf script from GitHub have been
 ### Issues
 1. Pages will be disorders when generating PDF. (Trying to both solving by myself and ask Liu.Qi for help)
 
-
+### Imported Modules
+1. PIL
+2. reportlab
+3. requests
+4. bs4
+5. re
 
 ### To-do List:
 2. 支持自动判别页码数目✓
@@ -36,11 +41,18 @@ It should be also mentioned that Liu.Qi's image2pdf script from GitHub have been
 	1. 只需要提供ISBN http://202.119.70.51:8088/servlet/isExitJson?isbn=978-7-121-22162-0
 
 6. 根据http://202.119.70.51:8088/Jpath\_sky/js/jpathBrowser5.js?v=1.1 描述
-	cov001.jpg - 封面 - 两页 -  "cov%03d"%i
-	bok001.jpg - 书名页 "bok%03d"
-	leg001.jpg - 版权页 "leg%03d"
-	fow001.jpg - 前言 "fow%03d"
-	!00001.jpg - 目录 "!%05d"
-	000001.jpg - 正文 "%06d"
-	att001.jpg - 附录 "att%03d"
-	bac001.jpg - 封底 "bac%03d"
+	a. cov001.jpg - 封面 - 两页 -  "cov%03d"%i
+	
+	b. bok001.jpg - 书名页 "bok%03d"
+	
+	c. leg001.jpg - 版权页 "leg%03d"
+	
+	d. fow001.jpg - 前言 "fow%03d"
+	
+	e. !00001.jpg - 目录 "!%05d"
+	
+	f. 000001.jpg - 正文 "%06d"
+	
+	g. att001.jpg - 附录 "att%03d"
+	
+	h. bac001.jpg - 封底 "bac%03d"
