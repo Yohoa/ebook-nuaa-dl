@@ -41,6 +41,7 @@ It should be also mentioned that Liu.Qi's image2pdf script from GitHub have been
 	1. 只需要提供ISBN http://202.119.70.51:8088/servlet/isExitJson?isbn=978-7-121-22162-0
 
 6. 根据http://202.119.70.51:8088/Jpath\_sky/js/jpathBrowser5.js?v=1.1 描述
+	
 	a. cov001.jpg - 封面 - 两页 -  "cov%03d"%i
 	
 	b. bok001.jpg - 书名页 "bok%03d"
