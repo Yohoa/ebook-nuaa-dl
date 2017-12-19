@@ -4,10 +4,10 @@
 ### Introduction
 These Python applet can help you with downloading and converting scanned books from the library of Nanjing University of Aeronautics and Astronautics.
 
-It should be also mentioned that Liu.Qi's image2pdf script from GitHub have been quoted.
+It should be also mentioned that Liu.Qi's image2pdf script from GitHub have been quoted. https://github.com/liuqi0725/image2PDF
 
 ### Issues
-1. Pages will be disorders when generating PDF. (Trying to both solving by myself and ask Liu.Qi for help)
+1. The order of pages will be disorders when generating PDF. (Appears both on Mac and Pythonista iOS. Trying to both solving by myself and ask Liu.Qi for help)
 
 ### Imported Modules
 1. PIL
