@@ -7,6 +7,9 @@
 # Created:      20/10/2016
 # Copyright:    (c) Chengdu Gerdige Technology Co., Ltd.
 # -------------------------------------------------------------------------------
+import logging
+
+logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 
 import os
 
@@ -17,7 +20,7 @@ import time
 
 from PIL import Image as pilImage
 
-class Convert2PDF:
+class Convert2PDF: #什麼是class 噢（這是一個叫做Convert2PDF 的類）
 
     # 支持的类型
     Const_Image_Format = [".jpg", ".jpeg", ".bmp", ".png"]
@@ -32,18 +35,27 @@ class Convert2PDF:
 
     def __init__(self,dirPath):
         # 默认路径
+        # 在初始化對象之實例的時候，賦予其路徑
         self.rootDir = dirPath
         self.begin()
 
     # 开始解析
     def begin(self):
         for parent, dirnames, filenames in os.walk(self.rootDir):
+            ######
+            filenames.sort()
+            
             for dirname in dirnames:
                 # 假设每个文件夹下都有图片，都是一本书
-                dirData ={"name":"","pages":[],"isBook":False}
+                dirData ={ #好厲害，這裡創建了一個不知道什麼數據類型（查詢了之後，發現是字典）
+                	"name":"",
+                	"pages":[],
+                	"isBook":False
+                }
                 dirName = dirname.split('/')[0]
                 dirData['name'] = dirName
                 self.dirs[dirName] = dirData
+                logging.debug(dirData)
 
             # 查找有无图片
             for filename in filenames:
