@@ -7,9 +7,7 @@
 # Created:      20/10/2016
 # Copyright:    (c) Chengdu Gerdige Technology Co., Ltd.
 # -------------------------------------------------------------------------------
-import logging
 
-logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 
 import os
 
@@ -42,7 +40,7 @@ class Convert2PDF: #什麼是class 噢（這是一個叫做Convert2PDF 的類）
     # 开始解析
     def begin(self):
         for parent, dirnames, filenames in os.walk(self.rootDir):
-            ######
+            
             filenames.sort()
             
             for dirname in dirnames:
@@ -55,7 +53,7 @@ class Convert2PDF: #什麼是class 噢（這是一個叫做Convert2PDF 的類）
                 dirName = dirname.split('/')[0]
                 dirData['name'] = dirName
                 self.dirs[dirName] = dirData
-                logging.debug(dirData)
+                
 
             # 查找有无图片
             for filename in filenames:
