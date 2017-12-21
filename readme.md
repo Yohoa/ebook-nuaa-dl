@@ -1,12 +1,13 @@
-# Download-Scanned-Book-from-the-Library-of-NUAA
-# 从南京航空航天大学的图书馆下载其数字馆藏——扫描版图书
+# Download-Scanned-Book-from-the-Library-of-NUAA | 从南京航空航天大学的图书馆下载其数字馆藏——扫描版图书
 ## Raphael Yang
 
 ### Introduction | 简介
 These Python applet can help you with downloading and converting scanned books from the library of Nanjing University of Aeronautics and Astronautics.
+
 这两个Python 小程序可以帮助你下载南京航空航天大学（南航大）的扫描版图书，并转换生成PDF文档。
 
 It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been quoted. https://github.com/liuqi0725/image2PDF
+
 这个仓库引用了Liu Qi 开源的image2PDF 组件。
 
 ### Issues | 已知的故障
