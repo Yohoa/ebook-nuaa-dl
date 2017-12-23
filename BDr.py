@@ -17,16 +17,18 @@
 # 2. bs4
 # 3. re
 
+# For Debug begin
 import logging
 
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 
-
-import requests, os, bs4, re, datetime, sys
-
 logging.disable(logging.CRITICAL)
 
+# For Debug end
 
+import requests, os, bs4, re, datetime, sys, shutil
+
+from image2PDF.app.business.ImageProcessService import Convert2PDF
 
 if (len(sys.argv) == 2):
         Reader_URL = str(sys.argv[1])
@@ -56,40 +58,18 @@ logging.debug('#DEBUG_Image_URL_Begin: ' + URL_IMGBEG)
 logging.debug('#DEBUG_Book_Title: ' + Book_Title)
 
 
-# Book_Title = "苏菲的世界"
-# 已經實現Book_Title自动获取；它位于在线阅读主页面的title
 
 # Paste_Image_URL = 'http://202.119.70.51:88/png/png.dll?did=a174&pid=40C01F4995D263EFCD868F778B7D59393BD1CC6A751C85B465D95940401C92BEFC86831873301A554E12EA526E7C9C61707702D49E5E761BE8F90290ABC4FF15BA09F8027F770318FAB4B02BF7FAAE05CF62438646FCF3AE430631E3D8F320626817&jid=/000001.jpg&uf=ssr&zoom=0'
 # 已經實現Paste_Image_URL自动获取；它位于在线阅读主页面的源码里，<body> 里面的<script> 中有提到。
 #URL_IMGBEG = Paste_Image_URL[0:len(Paste_Image_URL)-24]
 
 
-
-# Article_num = 269
-# 已經實現Article_num 的自动判断。
-# 用requests 得到的variable，可以用len(VARIABLE.content) 来决定是否含有内容。
-
-# imgUrlList = [];
-
-# for i in range(1, Article_num+1) :
-# 	URL = URL_IMGBEG + "%06d"%i + ".jpg"
-# 	imgUrlList.append(URL)
-
-
-# os.system("mkdir "+'/Users/Yangzhizhi/Documents/Books/'+Book_Title)
-
-# for i, j in enumerate(imgUrlList):
-#     with open('/Users/Yangzhizhi/Documents/Books/'+Book_Title+'/'+"Article_%06d"%(i+1)+".jpg", 'wb') as file:
-#         Page_s_temp = requests.get(j)
-#         file.write(Page_s_temp.content)
-#         print(str(Page_s_temp.status_code)+'\n')
-# print("Task Finished\n ")
-
 # 根據時間、書名產生文件夾名稱
 time_now = datetime.datetime.now()
 stamp_time = "%d%02d%02d_%02d%02d%02d" % (time_now.year, time_now.month, time_now.day, time_now.hour, time_now.minute, time_now.second)
-name_folder = stamp_time + '_' + Book_Title
-os.makedirs(name_folder)
+speci_name = stamp_time + '_' + Book_Title
+temp_folder = os.path.join('tmp_BDr',speci_name)
+os.makedirs(temp_folder)
 
 type_pages = ['cov%03d',
               'bok%03d',
@@ -112,7 +92,9 @@ name_pages = [  '01_Cover_',
 
 # 下载頁面
 
-for j in range(0, 7):
+# 用requests 得到的variable，可以用len(VARIABLE.content) 来决定是否含有内容。
+
+for j in range(0, 1):
         for i in range(1, 999999):
                 tmp_page = requests.get(URL_IMGBEG+type_pages[j]%i + '.jpg')
 
@@ -130,12 +112,14 @@ for j in range(0, 7):
                 # Aug 2017 12:58:40 +0800）該腳本針對形如「毛泽东选集.第二卷/毛泽东著」
                 # 這樣的書籍，將會異常退出。
 
+                # 用requests 得到的variable，可以用len(VARIABLE.content) 来决定是否含有内容。
+
                 if(len(tmp_page.content) <= 200):
                         if( i ==1 ):
                                 print('"%s" Part Not Found In This Book' % name_pages[j])
                         break
 
-                with open(name_folder + '/' + name_pages[j] + type_pages[5]%i + '.jpg', 'wb') as file:
+                with open(temp_folder + '/' + name_pages[j] + type_pages[5]%i + '.jpg', 'wb') as file:
                         file.write(tmp_page.content)
                         logging.debug('#DEBUG_正在输出第%d页\n\n', i)
         if( not ( i ==1 ) ):
@@ -144,14 +128,9 @@ for j in range(0, 7):
 
 
 
-print('\n*************************\n*Everything is finished.*\n*************************\n')
+print('\n*************************\n*Entire Book Downloaded.*\n*************************\n')
 
 
-
-
-
-
-
-
+Convert2PDF(os.path.join('.','tmp_BDr'))
 
 

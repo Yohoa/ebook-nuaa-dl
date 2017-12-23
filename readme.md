@@ -21,8 +21,8 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 5. re
 
 ### To-do List | 期待完成的功能
-2. 支持自动判别页码数目✓
-3. 支持自动获取标题✓
+2. 自动判别页数✓
+3. 自动获取标题✓
 4. 支持自动合成PDF 档案
 5. 优化交互方式，建议外程序外外置json 配置文档
 1. 支持全书的下载✓
@@ -45,20 +45,20 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 	1. 只需要提供ISBN http://202.119.70.51:8088/servlet/isExitJson?isbn=978-7-121-22162-0
 
 6. 根据http://202.119.70.51:8088/Jpath\_sky/js/jpathBrowser5.js?v=1.1 描述
-	
+
 	a. cov001.jpg - 封面 - 两页 -  "cov%03d"%i
-	
+
 	b. bok001.jpg - 书名页 "bok%03d"
-	
+
 	c. leg001.jpg - 版权页 "leg%03d"
-	
+
 	d. fow001.jpg - 前言 "fow%03d"
-	
+
 	e. !00001.jpg - 目录 "!%05d"
-	
+
 	f. 000001.jpg - 正文 "%06d"
-	
+
 	g. att001.jpg - 附录 "att%03d"
-	
+
 	h. bac001.jpg - 封底 "bac%03d"
 7. 建议将这个程序通过（较为规范的）C语言重新开发一遍。
