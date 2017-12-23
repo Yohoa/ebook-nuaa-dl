@@ -94,7 +94,7 @@ name_pages = [  '01_Cover_',
 
 # 用requests 得到的variable，可以用len(VARIABLE.content) 来决定是否含有内容。
 
-for j in range(0, 1):
+for j in range(0, 7):
         for i in range(1, 999999):
                 tmp_page = requests.get(URL_IMGBEG+type_pages[j]%i + '.jpg')
 
