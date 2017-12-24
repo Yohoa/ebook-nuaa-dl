@@ -27,7 +27,11 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 在扩大影响力方面，希望您能进行：
 1. 试用该项目的程序码，并将您的看法、您的意见反馈给我；
 2. 借此代码申请南航大的"创新实践工程项目”，[http://aao.nuaa.edu.cn/detail/21377?groupId=19](http://aao.nuaa.edu.cn/detail/21377?groupId=19) ，该页面在2017-12-24 17:30:30 可用。
+<<<<<<< HEAD
 3. 联系我，并加入[“南京航空航天大学大学网络安全和优化团队”](https://zhizhiyang.cn/post/168750858344/summary-the-science-thats-never-been)。
+=======
+3. 联系我，并加入[https://zhizhiyang.cn/post/168750858344/summary-the-science-thats-never-been](“南京航空航天大学大学网络安全和优化团队”)。
+>>>>>>> 504e0a4ae2b51f935281cb673db87dfafd9a1f77
 
 再次感谢您的关注！
 
