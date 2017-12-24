@@ -34,8 +34,12 @@ if (len(sys.argv) == 2):
         Reader_URL = str(sys.argv[1])
 else:
         if(len(sys.argv) == 1):
-                print('Input the URL You Get from Online Reader of Your Book')
+                print('Input the URL You Get from Online Reader of Your Book, or for “img2PDF Only” input anythings else except an URL. More features including “Download with ISBN” are under development.\n请您键入您要下载的书目在阅读器时标签栏的网址后回车。若仅需要合成PDF档，请直接键入回车。更多功能正在开发中（包括直接输入ISBN下载图书等）。\n')
                 Reader_URL = input()
+                if (len(Reader_URL) == 0 or (Reader_URL.find('http') == -1 )):
+                        print("\n*************************\n Redirect to img2PDF now.  \n*************************\n")
+                        Convert2PDF(os.path.join('.','tmp_BDr'))
+                        sys.exit()
         else:
                 print("\n*************************\n*   Nothing Finished.   *\n*************************\n")
                 sys.exit()
@@ -53,6 +57,10 @@ re_URL = re.compile(r"http://202.119.70.51:88/png/png.dll.*/")
 mo = re_URL.search(Get_Image_URL_Header)
 URL_IMGBEG = mo.group()
 Book_Title = Reader_res_bs.select('title')[0].getText() # 該行实现了自动获取Title的功能
+#Book_Title = "".join(x for x in Book_Title if (x.isalnum() or x in "._-")) #Remove the invalid characters in filename under some OS.
+
+valid_name_re = re.compile(r'[\\/:"*?<>|]+')
+Book_Title = valid_name_re.sub('_', Book_Title)
 
 logging.debug('#DEBUG_Image_URL_Begin: ' + URL_IMGBEG)
 logging.debug('#DEBUG_Book_Title: ' + Book_Title)
@@ -68,7 +76,7 @@ logging.debug('#DEBUG_Book_Title: ' + Book_Title)
 time_now = datetime.datetime.now()
 stamp_time = "%d%02d%02d_%02d%02d%02d" % (time_now.year, time_now.month, time_now.day, time_now.hour, time_now.minute, time_now.second)
 speci_name = stamp_time + '_' + Book_Title
-temp_folder = os.path.join('tmp_BDr',speci_name)
+temp_folder = os.path.join('.','tmp_BDr',speci_name)
 os.makedirs(temp_folder)
 
 type_pages = ['cov%03d',

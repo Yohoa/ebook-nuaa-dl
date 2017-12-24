@@ -50,7 +50,8 @@ class Convert2PDF: #什麼是class 噢（這是一個叫做Convert2PDF 的類）
                 	"pages":[],
                 	"isBook":False
                 }
-                dirName = dirname.split('/')[0]
+                dirName = dirname.split(os.path.sep)[0]
+                # dirName = dirname
                 dirData['name'] = dirName
                 self.dirs[dirName] = dirData
                 
@@ -60,8 +61,8 @@ class Convert2PDF: #什麼是class 噢（這是一個叫做Convert2PDF 的類）
 
                 real_filename = os.path.join(parent, filename)
                 # 取父文件夹名称为书名
-                parentDirName = real_filename.split('/')[-2]
-
+                parentDirName = real_filename.split(os.path.sep)[-2]
+                # parentDirName = dirname
                 if parentDirName in self.dirs.keys():
                     dirJsonData = self.dirs[parentDirName]
                 else:
