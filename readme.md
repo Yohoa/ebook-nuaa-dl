@@ -4,15 +4,38 @@
 ### Introduction | 简介
 These Python applet can help you with downloading and converting scanned books from the library of Nanjing University of Aeronautics and Astronautics.
 
-这两个Python 小程序可以帮助你下载南京航空航天大学（南航大）的扫描版图书，并转换生成PDF文档。
+这个Python 小程序（BDr.py）可以帮助你下载南京航空航天大学（南航大）的扫描版图书，并转换生成PDF文档。
 
 It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been quoted. https://github.com/liuqi0725/image2PDF
 
 这个仓库引用了Liu Qi 开源的image2PDF 组件。
 
+### How to use | 您需如何使用
+1. 将这个程序在你的平台上运行起来。
+	1. 这个程序在macOS 下Python3.6 与Windows 10 下的WinPython 环境下都被Raf. 成功实践。
+2. 根据提示，输入“书目在阅读器时标签栏的网址后回车”或直接回车。
+3. 静候佳音。
+4. 完成“已知的故障” 中“2. 这些清理工作……”中所提到的清理工作。
+
+### Need Help | 需要您的帮助
+我非常希望您能够为这个程序做贡献，以降低其使用门槛，方便更多的伙伴。
+在编写程序码方面，希望您能协助解决：
+1. “已知的故障”中仍然存在的问题；
+2. 为更好的交互提出您的见解；
+3. 以别的语言重构，参照“开发中的一点经验”的“7. 这个程序被……”。
+
+在扩大影响力方面，希望您能进行：
+1. 试用该项目的程序码，并将您的看法、您的意见反馈给我；
+2. 借此代码申请南航大的"创新实践工程项目”，[http://aao.nuaa.edu.cn/detail/21377?groupId=19](http://aao.nuaa.edu.cn/detail/21377?groupId=19) ，该页面在2017-12-24 17:30:30 可用。
+3. 联系我，并加入[“南京航空航天大学大学网络安全和优化团队”](https://zhizhiyang.cn/post/168750858344/summary-the-science-thats-never-been)。
+
+再次感谢您的关注！
+
 ### Issues | 已知的故障
 1. _The order of pages will be disorders when generating PDF. (Appears both on Mac and Pythonista iOS. Trying to both solving by myself and ask Liu.Qi for help)_ ←这个问题已经被解决。
-
+2. 这些清理工作需要在每次转换后手动进行：
+	1. 将tmp_BDr 文件夹清空，以避免下次运行时再次针对该书本进行转换。
+	2. 将PDF 文档拿走，以避免下次运行时进行的转换将该PDF 文档内容覆盖。
 ### Imported Modules | 需要导入的模块
 1. PIL
 2. reportlab
@@ -23,11 +46,10 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 ### To-do List | 期待完成的功能
 2. 自动判别页数✓
 3. 自动获取标题✓
-4. 支持自动合成PDF 档案
+4. 支持自动合成PDF 档案✓
 5. 优化交互方式，建议外程序外外置json 配置文档
 1. 支持全书的下载✓
-5. 支持直接从书籍介绍界面解析✓
-6. 支持合成PDF 档案时加入目录
+5. 支持直接从书籍介绍界面解析书籍的信息✓
 7. 支持cli 搜索图书，并提供一站式下载
 8. 支持多线程下载
 10. 支持多本图书批量操作
@@ -61,4 +83,4 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 	g. att001.jpg - 附录 "att%03d"
 
 	h. bac001.jpg - 封底 "bac%03d"
-7. 建议将这个程序通过（较为规范的）C语言重新开发一遍。
+7. 这个程序被建议通过（较为规范的）C语言重新开发一遍。
