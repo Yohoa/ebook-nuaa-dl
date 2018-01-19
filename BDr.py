@@ -30,11 +30,26 @@ import requests, os, bs4, re, datetime, sys, shutil
 
 from image2PDF.app.business.ImageProcessService import Convert2PDF
 
+
+def welcome():
+        project_loc = 'https://github.com/Yohoa/Download-Scanned-Book-from-the-Library-of-NUAA\n'
+        project_recomm = 'Thank you for using, any kind of contribution including code contributing, public recommendation bug reports.\nPS: Experts of digital copyright affairs are needed. \n\n感谢您的使用，我们欢迎任何形式的贡献，包括贡献代码、推广和提交程序错误。此外，我们还希望得到数字版权方面专家的帮助。 \nRaphael\n'
+        concise_intro = 'Input Book\'s URL and enter. For “img2PDF” function, type anything else except an URL. More features including “Download with ISBN” are under development.\n\n请您键入您要下载的书目在阅读器时标签栏的网址后回车。若仅需要合成PDF档，请直接键入回车。更多功能正在开发中（包括直接输入ISBN下载图书等）。\n'
+        line = "###########################################\n"
+        print(line)
+        print("#About\n" + project_recomm)
+        print(line)
+        print("项目地址：\n" + project_loc)
+        print("Project Repository⬇\n" + project_loc)
+        print(line)
+        print("#Concise Introduction\n" + concise_intro)
+        print(line)
+
 if (len(sys.argv) == 2):
         Reader_URL = str(sys.argv[1])
 else:
         if(len(sys.argv) == 1):
-                print('Input the URL You Get from Online Reader of Your Book, or for “img2PDF Only” input anythings else except an URL. More features including “Download with ISBN” are under development.\n请您键入您要下载的书目在阅读器时标签栏的网址后回车。若仅需要合成PDF档，请直接键入回车。更多功能正在开发中（包括直接输入ISBN下载图书等）。\n')
+                welcome()
                 Reader_URL = input()
                 if (len(Reader_URL) == 0 or (Reader_URL.find('http') == -1 )):
                         print("\n*************************\n Redirect to img2PDF now.  \n*************************\n")
