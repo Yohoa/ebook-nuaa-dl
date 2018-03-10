@@ -1,4 +1,4 @@
-# Download-Scanned-Book-from-the-Library-of-NUAA | 从南京航空航天大学的图书馆下载其数字馆藏——扫描版图书
+#从【南航大图书馆】下载图书的小程式 | E-book Downloader for the Library of NUAA
 ## Raphael Yang
 
 ### Introduction | 简介
@@ -15,7 +15,7 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 	1. 这个程序在macOS 下Python3.6 与Windows 10 下的WinPython 环境下都被Raf. 成功实践。
 2. 根据提示，输入“书目在阅读器时标签栏的网址后回车”或直接回车。
 3. 静候佳音。
-4. 完成“已知的故障” 中“2. 这些清理工作……”中所提到的清理工作。
+4. 完成“已知的故障” 中【2. 这些清理工作……】中所提到的清理工作。
 
 ### Need Help | 需要您的帮助
 我非常希望您能够为这个程序做贡献，以降低其使用门槛，方便更多的伙伴。
@@ -31,12 +31,12 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 
 再次感谢您的关注！
 
-### Issues | 已知的故障
-1. _The order of pages will be disorders when generating PDF. (Appears both on Mac and Pythonista iOS. Trying to both solving by myself and ask Liu.Qi for help)_ ←这个问题已经被解决。
+### Issues | 问题
+1. ~~~_The order of pages will be disorders when generating PDF. (Appears both on Mac and Pythonista iOS. Trying to both solving by myself and ask Liu.Qi for help)_~~~ ←这个问题已经被解决。
 2. 这些清理工作需要在每次转换后手动进行：
 	1. 将tmp_BDr 文件夹清空，以避免下次运行时再次针对该书本进行转换。
 	2. 将PDF 文档拿走，以避免下次运行时进行的转换将该PDF 文档内容覆盖。
-### Imported Modules | 需要导入的模块
+### Necessary Python Modules | 需要导入的模块
 1. PIL
 2. reportlab
 3. requests
@@ -58,7 +58,7 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 
 
 
-### Tips for Improvements | 开发中总结的一些经验
+### Tips for Improvements | 一些经验
 1. 网页title 就是书名✓
 2. 图片地址是绝对地址，根据观测，不会变化✓
 3. 目录的图片地址，是原链接，将后部的序号参数左侧第一个'0'改为'!'后所得。✓
@@ -84,3 +84,5 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 
 	h. bac001.jpg - 封底 "bac%03d"
 7. 这个程序被建议通过（较为规范的）C语言重新开发一遍。
+
+### Open Source License
