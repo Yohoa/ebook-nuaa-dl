@@ -1,4 +1,4 @@
-# Download-Scanned-Book-from-the-Library-of-NUAA | 从南京航空航天大学的图书馆下载其数字馆藏——扫描版图书
+# 从南京航空航天大学的图书馆下载其数字馆藏——扫描版图书
 ## Raphael Yang
 
 ### Introduction | 简介
@@ -17,25 +17,12 @@ It should be also mentioned that Liu.Qi's image2PDF script from GitHub have been
 3. 静候佳音。
 4. 完成“已知的故障” 中“2. 这些清理工作……”中所提到的清理工作。
 
-### Need Help | 需要您的帮助
-我非常希望您能够为这个程序做贡献，以降低其使用门槛，方便更多的伙伴。
-在编写程序码方面，希望您能协助解决：
-1. “已知的故障”中仍然存在的问题；
-2. 为更好的交互提出您的见解；
-3. 以别的语言重构，参照“开发中的一点经验”的“7. 这个程序被……”。
-
-在扩大影响力方面，希望您能进行：
-1. 试用该项目的程序码，并将您的看法、您的意见反馈给我；
-2. 借此代码申请南航大的"创新实践工程项目”，[http://aao.nuaa.edu.cn/detail/21377?groupId=19](http://aao.nuaa.edu.cn/detail/21377?groupId=19) ，该页面在2017-12-24 17:30:30 可用。
-3. 联系我，并加入[“南京航空航天大学大学网络安全和优化团队”](https://zhizhiyang.cn/post/168750858344/summary-the-science-thats-never-been)。
-
-再次感谢您的关注！
-
 ### Issues | 已知的故障
 1. _The order of pages will be disorders when generating PDF. (Appears both on Mac and Pythonista iOS. Trying to both solving by myself and ask Liu.Qi for help)_ ←这个问题已经被解决。
 2. 这些清理工作需要在每次转换后手动进行：
 	1. 将tmp_BDr 文件夹清空，以避免下次运行时再次针对该书本进行转换。
 	2. 将PDF 文档拿走，以避免下次运行时进行的转换将该PDF 文档内容覆盖。
+	
 ### Imported Modules | 需要导入的模块
 1. PIL
 2. reportlab
